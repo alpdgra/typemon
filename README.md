@@ -2,6 +2,8 @@
 
 Typebound is a small pixel-inspired typing RPG. You power an original creature named Glyphling by typing short spells. Fast, accurate typing deals more damage to the boss, while mistakes weaken each hit.
 
+**[Play Typebound](https://alpdgra.github.io/typebound/)**
+
 ## Current prototype
 
 - One complete boss battle against Mossmaw
@@ -22,6 +24,8 @@ pnpm dev
 
 Then open the local URL shown in the terminal.
 
+Do not open `index.html` directly. The development version needs to run through Vite using `pnpm dev`.
+
 ## Check the project
 
 ```bash
@@ -29,6 +33,14 @@ pnpm test
 pnpm lint
 pnpm build
 ```
+
+## Publish to GitHub Pages
+
+```bash
+pnpm deploy:pages
+```
+
+This builds the game and publishes `dist` to the `gh-pages` branch.
 
 ## Combat balance
 
