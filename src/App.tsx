@@ -485,7 +485,7 @@ export default function Home() {
         <div className="brand-lockup">
           <span className="brand-glyph">T</span>
           <div>
-            <p>TYPEBOUND</p>
+            <p>TYPEMON</p>
             <span>A TYPING RPG</span>
           </div>
         </div>
@@ -495,7 +495,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section aria-label="Typebound battle arena" className="battle-console">
+      <section aria-label="Typemon battle arena" className="battle-console">
         <div aria-hidden="true" className="console-rivet rivet-one" />
         <div aria-hidden="true" className="console-rivet rivet-two" />
         <div aria-hidden="true" className="console-rivet rivet-three" />
@@ -742,7 +742,7 @@ export default function Home() {
       <footer className="game-footer">
         <span>ACCURACY POWERS EVERY STRIKE</span>
         <span className="footer-rule" />
-        <span>TYPEBOUND // PROTOTYPE 01</span>
+        <span>TYPEMON // PROTOTYPE 01</span>
       </footer>
 
       <div aria-live="polite" className="sr-only" role="status">

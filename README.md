@@ -1,8 +1,8 @@
-# Typebound
+# Typemon
 
-Typebound is a small pixel-inspired typing RPG. You power an original creature named Glyphling by typing short spells. Fast, accurate typing deals more damage to the boss, while mistakes weaken each hit.
+Typemon is a small pixel-inspired typing RPG. You power an original creature named Glyphling by typing short spells. Fast, accurate typing deals more damage to the boss, while mistakes weaken each hit.
 
-**[Play Typebound](https://alpdgra.github.io/typebound/)**
+**[Play Typemon](https://alpdgra.github.io/typemon/)**
 
 ## Current prototype
 
