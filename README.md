@@ -36,11 +36,14 @@ pnpm build
 
 ## Publish to GitHub Pages
 
-```bash
-pnpm deploy:pages
-```
+Deployment is automatic. Every push to `main` runs `.github/workflows/deploy.yml`,
+which tests, lints, and builds the game, then publishes `dist` to GitHub Pages.
 
-This builds the game and publishes `dist` to the `gh-pages` branch.
+This requires Pages to be set to build from GitHub Actions, under
+Settings -> Pages -> Source.
+
+The `pnpm deploy:pages` script still publishes `dist` to a `gh-pages` branch by
+hand, but it is no longer part of the normal flow.
 
 ## Combat balance
 
