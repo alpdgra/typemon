@@ -21,12 +21,21 @@ Requires Node 22.12+.
 ## Deployment
 
 Pushing to `main` runs `.github/workflows/deploy.yml`, which tests, lints,
-builds, and publishes to GitHub Pages. Pages must be set to build from GitHub
-Actions (Settings -> Pages -> Source).
+builds, and publishes to GitHub Pages.
 
-The `gh-pages` branch and the `deploy:pages` script are the older manual path.
-They are superseded by the workflow but kept until the Actions deploy is
-confirmed green.
+**Pages must be set to build from GitHub Actions** (Settings -> Pages ->
+Source). Only a repo admin can change this. `GITHUB_TOKEN` cannot: a
+`PUT /repos/{owner}/{repo}/pages -f build_type=workflow` from inside Actions
+returns 403 "Resource not accessible by integration". Do not add
+`actions/configure-pages` with `enablement: true` to work around it — that
+repoints Pages at legacy branch mode serving the repo root, which publishes
+the unbuilt `index.html` and its `/src/main.tsx` reference, and the live site
+breaks. The `deploy-pages` job still reports success when this happens, so a
+green run is not evidence the site works.
+
+To verify the live site, curl it from inside a workflow. Session egress to
+`alpdgra.github.io` and the Pages REST API are both blocked by the proxy, so
+neither can be checked from a cloud session directly.
 
 `vite.config.ts` sets `base: "./"` so the built site works from any repo path.
 
