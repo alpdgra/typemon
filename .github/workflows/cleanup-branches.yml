@@ -1,0 +1,26 @@
+name: One-shot branch cleanup
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete stale branches
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          for branch in gh-pages claude/api-keys-repo-scan-jmxg6t; do
+            echo "Deleting $branch"
+            gh api -X DELETE "repos/$REPO/git/refs/heads/$branch" \
+              && echo "  deleted" \
+              || echo "  failed (may already be gone)"
+          done
+          echo "Remaining branches:"
+          gh api "repos/$REPO/branches" --jq '.[].name'
